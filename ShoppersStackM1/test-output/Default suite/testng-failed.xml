@@ -5,10 +5,9 @@
     <classes>
       <class name="ShopperLogin.Login1Test">
         <methods>
-          <include name="TC_Login_001"/>
           <include name="aftermethod"/>
-          <include name="TC_Login_002"/>
           <include name="loginToapplication"/>
+          <include name="TC_Login_002"/>
           <include name="logoutToApplication"/>
           <include name="lanchTheBrowser"/>
         </methods>

@@ -26,7 +26,7 @@ public class DataUtility {
 	
 	public String fetchingExelFileDataString(String sheetname,int rowNum,int cellNum) throws Throwable  {
 		
-		File file =new File("C:\\Users\\91963\\Documents\\my\\PersonalData.xlsx");
+		File file =new File("C:\\Users\\Qspiders\\Documents\\TestExelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		Workbook workbook = WorkbookFactory.create(fis);
 		Sheet sheet = workbook.getSheet(sheetname);
@@ -38,7 +38,7 @@ public class DataUtility {
 	
    public long fetchingExelFileDataNumeric(String sheetname,int rowNum,int cellNum) throws Throwable{
 		
-		File file =new File("C:\\Users\\91963\\Documents\\my\\PersonalData.xlsx");
+		File file =new File("C:\\Users\\Qspiders\\Documents\\TestExelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		Workbook workbook = WorkbookFactory.create(fis);
 		Sheet sheet = workbook.getSheet(sheetname);
@@ -50,7 +50,7 @@ public class DataUtility {
 
    public boolean fetchingExelFileDataBoolean(String sheetname,int rowNum,int cellNum) throws Throwable{
 		
-		File file =new File("C:\\Users\\91963\\Documents\\my\\PersonalData.xlsx");
+		File file =new File("C:\\Users\\Qspiders\\Documents\\TestExelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		Workbook workbook = WorkbookFactory.create(fis);
 		Sheet sheet = workbook.getSheet(sheetname);
@@ -62,7 +62,7 @@ public class DataUtility {
    
    public String fetchingExelFileDataDate(String sheetname,int rowNum,int cellNum) throws Throwable{
 		
-		File file =new File("C:\\Users\\91963\\Documents\\my\\PersonalData.xlsx");
+		File file =new File("C:\\Users\\Qspiders\\Documents\\TestExelData.xlsx");
 		FileInputStream fis = new FileInputStream(file);
 		Workbook workbook = WorkbookFactory.create(fis);
 		Sheet sheet = workbook.getSheet(sheetname);

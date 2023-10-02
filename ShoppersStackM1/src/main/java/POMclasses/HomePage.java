@@ -22,6 +22,9 @@ public class HomePage {
 	@FindBy(xpath="//div[text()='Log Out']")
 	private WebElement LogoutLink;
 
+	@FindBy(xpath = "//div[text()='Hotels']")
+	private WebElement HotelsMenuLink;
+	
 	
 	//getters web elements
 	
@@ -32,5 +35,7 @@ public class HomePage {
 	public WebElement getLogoutLink() {
 		return LogoutLink;
 	}
-
+	public WebElement getHotelsMenuLink() {
+		return HotelsMenuLink;
+	}
 }

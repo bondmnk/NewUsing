@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,6 +15,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import POMclasses.HomePage;
 import POMclasses.LoginPage;
@@ -26,17 +28,22 @@ public class BaseClass {
 	public static  WebDriver driver;
 	DataUtility data=new DataUtility();
 	
+	
+	@Parameters("Browser")
 	@BeforeClass
-	public   void lanchTheBrowser() throws Throwable {
-		System.out.println("-----------------Lanching the Browser-----------------");
-		String Browser=data.fetchingPropertiesFileData("browser");
+	public   void lanchTheBrowser(String Browser) throws Throwable {
+		System.out.println("-----------------Lanching the Browser---------------");
+//		String Browser=data.fetchingPropertiesFileData("browser");
+		
+		ChromeOptions option = new ChromeOptions();
+		option.addArguments("--disable-notifications");
 		
 		if(Browser.equals("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver(); 
+			driver=new ChromeDriver(option); 
 		}
 		else if(Browser.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+		System.setProperty("webDriver.gecko.driver", "./Drivers/geckodriver.exe");
 			driver=new FirefoxDriver();
 		}
 		else if(Browser.equals("edge")) {
@@ -76,7 +83,7 @@ public class BaseClass {
 	public void logoutToApplication() throws Throwable {
 		System.out.println("-----------------Logout the appliaction-----------------");
 
-		HomePage homepage= new HomePage(driver);
+		 HomePage homepage= new HomePage(driver);
 		homepage.getUserNameText().click();
 		homepage.getLogoutLink().click();
 	}
